@@ -1,8 +1,8 @@
 jQuery(function($) {
   // Mask input
-  $("input[name='calcPeople']").mask("99");
-  $("input[name='calcAgeFrom']").mask("99");
-  $("input[name='calcAgeTo']").mask("99");
+  // $("input[name='calcPeople']").mask("99");
+  // $("input[name='calcAgeFrom']").mask("99");
+  // $("input[name='calcAgeTo']").mask("99");
 
   // Define variables across scope
   var type, people, calcAgeFrom, calcAgeTo, options, additional, price
@@ -59,7 +59,12 @@ jQuery(function($) {
     if (additional == "RentChillZone") {
       price = price + RentChillZone
     } else if (additional == "OrderMenu") {
-      price = price + OrderMenu
+      if (people > PeopleLimitToCount) {
+        var extraPeople = people - PeopleLimitToCount
+        price = price + (extraPeople * 900) + OrderMenu
+      } else {
+        price = price + OrderMenu
+      }
     }
 
     // display price
@@ -72,7 +77,7 @@ jQuery(function($) {
         $(this).prop('Counter', numberFromAnimate).animate({
             Counter: $(this).text()
         }, {
-            duration: 2000,
+            duration: 0,
             easing: 'swing',
             step: function (now) {
                 $(this).text(Math.ceil(now)).digits();

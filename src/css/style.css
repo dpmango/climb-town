@@ -337,6 +337,12 @@
   display: none;
 }
 
+@media(max-width: 768px) {
+  #calcOrderPrice {
+    display: block !important;
+  }
+}
+
 .popupCalcCustomWhereFrom {
   display: none;
 }
