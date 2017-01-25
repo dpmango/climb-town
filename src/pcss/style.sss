@@ -151,15 +151,72 @@ $bp900: width <= 920px
         border: 6px solid #ffd300
 
 .input-select
+  position: relative
   border-radius: 44px
-  text-align: center
-  text-align-last: center
-  padding-left: 30px
-  padding-right: 30px
-  background-image: svg-load('../images/caret-down.svg')
-  background-position: 80% center
-  background-repeat: no-repeat
-  background-size: 15px
+
+  &-current
+    text-align: center
+    text-align-last: center
+    padding-left: 30px
+    padding-right: 30px
+    background-image: svg-load('../images/caret-down.svg')
+    background-position: 80% center
+    background-repeat: no-repeat
+    background-size: 15px
+    background: #fff
+    width: 100%
+    display: block
+    transition: all .3s ease-in-out
+    -webkit-appearance: none
+    font: 400 18px/30px 'PT Sans'
+    color: #686868
+    border: 3px solid #ffd60f
+    text-transform: uppercase
+    border-radius: 44px
+    padding: 27px 10px
+    text-align: center
+    position: relative
+    z-index: 4
+    cursor: pointer
+    @media(height <= 850px)
+      padding-top: 14px
+      padding-bottom: 14px
+
+  &-drop
+    display: none
+    list-style: none
+    background: white
+    position: absolute
+    top: 50px
+    padding-top: 55px
+    left: 0px
+    z-index: 3
+    height: 250px
+    width: 100%
+    border-left: 3px solid #ffd60f
+    border-right: 3px solid #ffd60f
+    border-bottom: 3px solid #ffd60f
+    border-bottom-left-radius: 44px
+    border-bottom-right-radius: 44px
+    box-sizing: border-box
+    @media(height <= 850px)
+      top: 35px
+      padding-top: 45px
+    li
+      display: block
+      text-align: left
+      padding-left: 100px
+      margin-bottom: 5px
+      font-size: 18px
+      text-transform: uppercase
+      color: #686868
+      cursor: pointer
+      transition: color .4s ease
+      &:hover
+        color: #f15a29
+
+  input[type=hidden]
+    display: none
 
 #popup-calc
   .form-row
@@ -177,6 +234,12 @@ $bp900: width <= 920px
   span
     color: #f15a29
 
+.sucess-message
+  font-size: 36px
+  line-height: 1.4em
+  text-align: center
+  padding: 150px 50px
+
 .ico-required
   color: #f15a29
   position: absolute
@@ -189,6 +252,8 @@ $bp900: width <= 920px
 #calcOrderPrice
   display: none
 
+.popupCalcCustomWhereFrom
+  display: none
 
 .tooltip
   position: relative

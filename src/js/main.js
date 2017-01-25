@@ -107,6 +107,25 @@ jQuery(function($) {
     e.preventDefault();
   });
 
+  // Toggle custom select
+  $('.input-select-current').on('click', function(){
+    $(this).closest('.input-select').find('.input-select-drop').fadeToggle();
+  });
+
+  $('.input-select-drop li').on('click', function(){
+    var value = $(this).data('value');
+
+    if ( value == "custom" ){
+      $('.popupCalcCustomWhereFrom').fadeIn();
+      $(this).closest('.input-select').find('.input-select-current').text("Указать свое");
+    } else {
+      $(this).closest('.input-select').find("input[type=hidden]").val(value);
+      $('.popupCalcCustomWhereFrom').fadeOut();
+      $(this).closest('.input-select').find('.input-select-current').text(value);
+    }
+    $(this).closest('.input-select').find('.input-select-drop').fadeOut();
+  });
+
   $('#popup-calc .popup-order__form-action .button').on('click', function(e){
     var form = $('#popup-calc')
     var popupCalcName = form.find('input[name=popupCalcName]').val();

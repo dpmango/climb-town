@@ -646,11 +646,20 @@
         <input placeholder="Желаемая дата праздника" name="popupCalcDate"  type="text">
       </div>
       <div class="form-row">
-        <select class="input-select" name="popupCalcWhereFrom" >
-          <option value="Откуда вы о нас узнали?">Откуда вы о нас узнали?</option>
-          <option value="Реккомендации знакомых">Реккомендации знакомых</option>
-          <option value="Социальные сети">Социальные сети</option>
-        </select>
+        <div class="input-select">
+          <div class="input-select-current">Откуда вы о нас узнали?</div>
+          <ul class="input-select-drop">
+            <li data-value="Google">Google</li>
+            <li data-value="Яндекс">Яндекс</li>
+            <li data-value="ВКонтакте">ВКонтакте</li>
+            <li data-value="Знакомые">Знакомые</li>
+            <li data-value="custom">Указать свое</li>
+          </ul>
+        </div>
+        <input type="hidden" name="popupCalcWhereFrom" value="">
+      </div>
+      <div class="form-row popupCalcCustomWhereFrom">
+        <input placeholder="Напишите свой вариант.." name="popupCalcWhereFromCustom" type="text">
       </div>
       <div class="form-row pb0">
         <div class="popup-order-required">

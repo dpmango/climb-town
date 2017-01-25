@@ -2,7 +2,7 @@
 Gulp starter package to use with PostCss or sass, pug, autoprefixer, compile bootstrap, minify assets and perform other common front-end tasks.
 
 # Demo link
-http://dpmango.github.io/climb-town/src/index.html
+https://dpmango.github.io/climb-town/src/index.html
 
 ## Getting stated
 __Development:__
