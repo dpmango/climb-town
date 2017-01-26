@@ -36,11 +36,11 @@ jQuery(function($) {
         var extraPeople = people - PeopleLimitToCount
         price = price + (extraPeople * AnimatorPriceExtraPerson)
       }
-      if (calcAgeFrom < 10) {
-        $('.input-error').text('Минимальный возраст - 10 лет');
-      } else{
-        $('.input-error').text('');
-      }
+      // if (calcAgeFrom < 10) {
+      //   $('.input-error').text('Минимальный возраст - 10 лет');
+      // } else{
+      //   $('.input-error').text('');
+      // }
     } else if (type == "instructor") {
       $('#calcShows').fadeOut();
       price = InstructorPrice;
@@ -48,11 +48,11 @@ jQuery(function($) {
         var extraPeople = people - PeopleLimitToCount
         price = price + (extraPeople * InstructorPriceExtraPerson)
       }
-      if (calcAgeFrom < 6) {
-        $('.input-error').text('Минимальный возраст - 6 лет');
-      } else{
-        $('.input-error').text('');
-      }
+      // if (calcAgeFrom < 6) {
+      //   $('.input-error').text('Минимальный возраст - 6 лет');
+      // } else{
+      //   $('.input-error').text('');
+      // }
     }
 
     // Detect required Options - for animator only
