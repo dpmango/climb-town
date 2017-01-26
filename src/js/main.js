@@ -36,12 +36,22 @@ jQuery(function($) {
         var extraPeople = people - PeopleLimitToCount
         price = price + (extraPeople * AnimatorPriceExtraPerson)
       }
-    } else {
+      if (calcAgeFrom < 10) {
+        $('.input-error').text('Минимальный возраст - 10 лет');
+      } else{
+        $('.input-error').text('');
+      }
+    } else if (type == "instructor") {
       $('#calcShows').fadeOut();
       price = InstructorPrice;
       if (people > PeopleLimitToCount) {
         var extraPeople = people - PeopleLimitToCount
         price = price + (extraPeople * InstructorPriceExtraPerson)
+      }
+      if (calcAgeFrom < 6) {
+        $('.input-error').text('Минимальный возраст - 6 лет');
+      } else{
+        $('.input-error').text('');
       }
     }
 
@@ -77,7 +87,7 @@ jQuery(function($) {
         $(this).prop('Counter', numberFromAnimate).animate({
             Counter: $(this).text()
         }, {
-            duration: 0,
+            duration: 600,
             easing: 'swing',
             step: function (now) {
                 $(this).text(Math.ceil(now)).digits();

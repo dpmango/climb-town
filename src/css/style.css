@@ -15,6 +15,29 @@
   text-align: center;
 }
 
+.order-child {}
+
+@media(max-width: 768px) {
+  .order-child {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+}
+
+@media(max-width: 414px) {
+  .order-child {
+    margin-right: 8%;
+    margin-left: 8%;
+  }
+}
+
+@media(max-width: 374px) {
+  .order-child {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
 /* custom class */
 .order-calculator .div {
   -webkit-box-sizing: border-box;

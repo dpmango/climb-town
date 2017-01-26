@@ -17,6 +17,17 @@ $bp900: width <= 920px
 .text-center
   text-align: center
 
+.order-child
+  @media($mobile)
+    margin-left: 10%
+    margin-right: 10%
+  @media(width <= 414px)
+    margin-left: 8%
+    margin-right: 8%
+  @media(width <= 374px)
+    margin-left: 0
+    margin-right: 0
+
 // custom class
 .order-calculator
   .div
